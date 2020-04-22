@@ -10,10 +10,17 @@ public class TestDemo {
 		// TODO Auto-generated method stub
 		HtmlFile hf=new HtmlFile();
 		hf.createLog("d:\\test11.html");
-		hf.write("²âÊÔÓÃÀý1Ð£Ñé·½·¨func1", "ok",func1());
-		hf.write("²âÊÔÓÃÀý2","ok","not ok");
-		hf.write("²âÊÔÓÃÀý3","ok","not ok");
+		hf.write("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1Ð£ï¿½é·½ï¿½ï¿½func1", "ok",func1());
+		hf.write("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2","ok","not ok");
+		hf.write("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½3","ok","not ok");
 		hf.closeLog();
+		
+		
+		GlobleHtmlFile.createLog("d:\\test21.html");
+		GlobleHtmlFile.write("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1Ð£ï¿½é·½ï¿½ï¿½func1", "ok",func1());
+		GlobleHtmlFile.write("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2","ok","not ok");
+		GlobleHtmlFile.write("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½3","ok","not ok");
+		GlobleHtmlFile.closeLog();
 		
 		
 

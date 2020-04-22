@@ -9,15 +9,15 @@ import com.report.base.IFile;
 
 //import java.util.logging.SimpleFormatter;
 
-public  class HtmlFile  implements IFile{
+public  class GlobleHtmlFile   {
 
 
-   private Logger logger = Logger.getLogger(HtmlFile.class.getName());
-   private FileHandler fileHTML;
+   private static Logger logger = Logger.getLogger(GlobleHtmlFile.class.getName());
+   private static FileHandler fileHTML;
    
     
 
-     public void createLog(String p_logName ,boolean p_apped){
+     public static void createLog(String p_logName ,boolean p_apped){
     	 try {
  			fileHTML = new FileHandler(p_logName,p_apped);
  		} catch (SecurityException e) {
@@ -31,8 +31,8 @@ public  class HtmlFile  implements IFile{
  		logger.addHandler(fileHTML);
      }
      
-     @Override
-     public void createLog(String p_logName){
+     
+     public static void createLog(String p_logName){
     	 try {
  			fileHTML = new FileHandler(p_logName);
  		} catch (SecurityException e) {
@@ -48,8 +48,8 @@ public  class HtmlFile  implements IFile{
    
 
 	
-     @Override
-	public void closeLog() {
+     
+	public static void closeLog() {
 		fileHTML.close();
 		RecordStore.p_pass=0; 
 		RecordStore.p_fail=0; 
@@ -61,8 +61,8 @@ public  class HtmlFile  implements IFile{
 		
 	}
 
-	@Override
-	public void write(String p_info, String p_expected,String p_actual)  {
+	
+	public static void write(String p_info, String p_expected,String p_actual)  {
 		RecordStore.actual = p_actual;
 		RecordStore.expected = p_expected;
 		
@@ -81,15 +81,15 @@ public  class HtmlFile  implements IFile{
 
 	}
 
-	@Override
-	public void write(String p_info) {
+	
+	public static void write(String p_info) {
 		// TODO Auto-generated method stub
 		logger.info(p_info);
 		
 	}
 
-	@Override
-	public void write(String p_info, String p_result) {
+	
+	public static void write(String p_info, String p_result) {
 		// TODO Auto-generated method stub
 		
 		RecordStore.result = p_result;
@@ -105,20 +105,20 @@ public  class HtmlFile  implements IFile{
 
 	
 
-	@Override
-	public String read() {
+	
+	public static String read() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public String read(String p_key) {
+	
+	public static String read(String p_key) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public String read(String p_section, String p_key) {
+	
+	public static String read(String p_section, String p_key) {
 		// TODO Auto-generated method stub
 		return null;
 	}
